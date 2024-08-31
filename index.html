@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> الصيدلية الذكية </title>
+
+  <!-- Favicons -->
+  <link href="assets/image/favicon.png" rel="icon">
+
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+  <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="index-page">
+
+  <header class="header sticky-top bg-primary py-4">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center  justify-content-between">
+        <div class="">
+          <h1 class="display-1">الصيدلية الذكية</h1>
+        </div>
+        <div class="">
+          <img src="assets/image/logo.png" alt="لايوجد صورة" width="120px" srcset="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </header>
+ 
+
+
+  <nav class="bg-blue pt-2">
+    <div class="d-flex container align-items-start">
+      <ul class=" nav nav-tabs me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active show" data-bs-toggle="tab" href="#home">الرئيسية</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#about">من نحن</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#contact">الدعم الفني</a>
+        </li>
+      </ul>
+  
+      <a class=" btn btn-primary " href="login.html">تسجيل الدخول</a>
+    </div>
+   
+  </nav>
+
+  <main class="main">
+
+    <!-- Tabs Section -->
+    <section id="home-page" class="tabs section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 mt-4 mt -lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="home">
+                <div class="row">
+                  <div class="col-lg-12 details order-2 order-lg-1 text-center">
+                    <h2>مرحبا بكم في الصيدلية الذكية</h2>
+                    <p class="mt-5 h4 ">في ظل التطور التكنولوجي المتسارع، تسعى الرعاية الصحية نحو تحسين تجارب المرضى
+                      وجعلها أكثر فعالية وسلاسة. يأتي هذا البحث
+                      لاستكشاف إمكانية إنشاء موقع صيدلي ذكي، الذي يسهم في تسهيل عملية صرف الدواء.</p>
+
+                  </div>
+
+                </div>
+              </div>
+              <div class="tab-pane" id="about">
+                <div class="row">
+                  <div class="col-lg-12 details order-2 order-lg-1 text-center">
+                    <h2 class="h2">من نحن</h2>
+
+                    <p class="mt-5 h4">موقع الكتروني يسهل من خدمات المرضى ويقوم بإرسال الوصفات الطبية والعلاج وطريقة
+                      استخدام الجرعات وتاريخ انتهاء الوصفة
+                      لنسهل ازدحام الصيدليات ونسيان المريض لمواعيد الجرع المحددة كما يتم ارسال التعليمات والتنبيهات
+                      ومتابعة المريض خلال فترة علاجه.</p>
+                  </div>
+
+                </div>
+              </div>
+              <div class="tab-pane" id="contact">
+                <div class="row gy-3 align-items-baseline">
+                  <div class="col-lg-12 text-center details order-3 order-lg-1">
+                    <h2> يمكنكم التواصل مع خدمة الدعم الفني في حال وجود اي مشاكل</h2>
+
+                  </div>
+                  <div class="col-lg-4  order-2 mt-5 h5 order-lg-2">
+                    <p>عبر الأرقام التالية :</p>
+                    <p>موبايل : <a href="">+96655123456</a> </p>
+                    <p>واتساب : <a href="">+96655234567</a> </p>
+                    <p>او عبر موقعنا الالكتروني </p>
+                  </div>
+                  <div class="col-lg-8  order-1 order-lg-3">
+                    <form action="forms/contact.php" method="post" class="php-email-form">
+                      <div class="row gy-3">
+
+                        <div class="col-md-6">
+                          <input type="text" name="name" class="form-control" placeholder="اسمك " required="">
+                        </div>
+
+                        <div class="col-md-6 ">
+                          <input type="email" class="form-control" name="email" placeholder="عنوان بريدك الالكتروني"
+                            required="">
+                        </div>
+
+                        <div class="col-md-12">
+                          <input type="text" class="form-control" name="subject" placeholder="الموضوع" required="">
+                        </div>
+
+                        <div class="col-md-12">
+                          <textarea class="form-control" name="message" rows="3" placeholder="نص الرسالة"
+                            required=""></textarea>
+                        </div>
+
+                        <div class="col-md-12 text-end">
+
+                          <button type="submit" class="btn btn-primary">أرسال الرسالة</button>
+                        </div>
+
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Tabs Section -->
+
+  </main>
+
+
+  <footer id="footer" class="footer fixed-bottom bg-blue text-light">
+
+
+
+    <div class="container copyright  text-center mt-4 py-3">
+      <p>© <span>حقوق النشر لدى</span> <strong class="px-1 sitename"> الصيدلية الذكية</strong> <span>كل الحقوق
+          محفوظة</span></p>
+      <div class="credits">
+
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+  <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

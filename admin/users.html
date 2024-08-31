@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> الصيدلية الذكية </title>
+
+  <!-- Favicons -->
+  <link href="../assets/image/favicon.png" rel="icon">
+
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+  <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="../assets/plugins/dataTable/datatables.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="users-page">
+
+  <header class="header  bg-primary py-4">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center  justify-content-between">
+        <div class="">
+          <h1 class="display-1">الصيدلية الذكية</h1>
+        </div>
+        <div class="">
+          <img src="../assets/image/logo.png" alt="لايوجد صورة" width="120px" srcset="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+  <nav class="bg-blue sticky-top pt-2">
+    <div class="d-flex container align-items-start">
+      <ul class=" nav nav-tabs me-auto  mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link "  href="./">الرئيسية</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"  href="users.html">إدارة المستخدمين </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="phr.html"> إدارة المرضى</a>
+        </li>
+      </ul>
+  
+      <a class=" btn btn-primary " href="../login.html">تسجيل الخروج</a>
+    </div>
+   
+  </nav>
+
+  <main class="main">
+
+    <!-- Users Section -->
+    <section id="users-page" class="tabs section">
+      <div class="container">
+        
+        <div class="row ">
+
+          <div class="col-2 mt-5">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#view">عرض</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#addUser">إضافة</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-10  mt-4 text-center">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="view">
+                <h3>عرض المستخدمين</h3>
+                  <table class="table border ">
+                    <thead>
+                      <tr>
+                        <th>أسم المستخدم</th>
+                        <th> ألاجراء</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>محمد</td>
+                        <td>
+                          <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#updateUser">
+                            تعديل 
+                          </button>
+                          <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteUser">
+                            حذف 
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+
+              <div class="tab-pane " id="addUser">
+               
+                <form action="forms/contact.php" method="post" class=" ">
+                  <legend>إضافة مستخدم جديد</legend>
+                  <div class="row gy-3 pb-4 border">
+                  
+                    <div class="col-md-4">
+                      <label for="username" class="form-label" >اسم المستخدم</label>
+                    </div>
+                    <div class="col-md-8">
+                      <input type="text" name="username" id="username" class="form-control" placeholder="اسم المستخدم " required="">
+                    </div>
+    
+                    <div class="col-md-4">
+                      <label for="password" class="form-label" > كلمة المرور</label>
+                    </div>
+    
+                    <div class="col-md-8 ">
+                      <input type="password" class="form-control" name="password"  id="password" placeholder="كلمة المرور"
+                        required="" autocomplete="new-password">
+                    </div>
+    
+                
+    
+                    <div class="col-md-4">
+                      <label for="users_type" class="form-label" > نوع المستخدم</label>
+                    </div>
+                    <div class="col-md-8 ">
+                    
+                      <div class="form-check text-start ">
+                        <input type="radio" name="users_type" class="form-check-input" id="admin" checked="">
+                        <label class="form-check-label" for="admin"> مدير</label>
+                      </div>
+                      <div class=" form-check text-start">
+                        <input type="radio" name="users_type" class="form-check-input" id="user">
+                        <label class="form-check-label" for="user">  مشرف (صيدلي) </label>
+                      </div>
+                    </div>
+    
+                  </div>
+    
+                  <div class="col-md-12 mt-2">
+    
+    
+                    <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropLive">
+                      إضافة 
+                    </button>
+                  </div>
+                </form>
+
+              </div>
+
+            </div>
+          
+
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /Users Section -->
+
+  </main>
+
+
+  <div class="modal fade " id="staticBackdropLive" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLiveLabel" aria-modal="true" role="dialog">
+    <div class="modal-dialog ">
+      <div class="modal-content ">
+        <div class="modal-header  text-danger">
+          <h1 class="modal-title fs-5" id="staticBackdropLiveLabel">تنبية</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+        </div>
+        <div class="modal-body text-center text-danger">
+          <p>المعذرة</p>
+          <p>اسم المستخدم أو كلمة المرور خاطئة ،،،</p>
+          <p>يرجى التأكد من اسم المستخدم وكلة المرور
+            ونوع المستخدم ،،،.</p>
+        
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button> -->
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">إعادة المحاولة</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade " id="deleteUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLiveLabel" aria-modal="true" role="dialog">
+    <div class="modal-dialog ">
+      <div class="modal-content ">
+        <div class="modal-header  text-danger">
+          <h1 class="modal-title fs-5" id="staticBackdropLiveLabel">تنبية</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+        </div>
+        <div class="modal-body text-center text-danger">
+          <p>تاكيد الحذف</p>
+          <p>  هل أنت متاكد من رغبتك بالحذف  </p>
+          <p>   لايكمن التراجع عن العملية  ،،،.</p>
+        
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button> -->
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">تأكيد الحذف </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade " id="updateUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLiveLabel" aria-modal="true" role="dialog">
+    <div class="modal-dialog ">
+      <div class="modal-content ">
+        <div class="modal-header  ">
+          <h1 class="modal-title fs-5" id="staticBackdropLiveLabel">تعديل</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+        </div>
+        <div class="modal-body text-center ">
+          <p>تعديل</p>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button> -->
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal"> حفظ التعديلات</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script src="../assets/plugins/jquery-3.6.4.js"></script>
+  <script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/plugins/dataTable/datatables.min.js"></script>
+  <script> // dataTable
+    document
+      .querySelectorAll(".table")
+      .forEach(function (table) {
+        new DataTable(table, {
+          language: {
+            url: '../assets/plugins/dataTable//ar.json',
+          },
+          responsive: true,
+          processing: true,
+        }
+        )
+      }
+      );
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> الصيدلية الذكية </title>
+
+  <!-- Favicons -->
+  <link href="../assets/image/favicon.png" rel="icon">
+
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+  <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="../assets/plugins/dataTable/datatables.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="phr-page ">
+
+  <header class="header bg-primary py-4">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center  justify-content-between">
+        <div class="">
+          <h1 class="display-1">الصيدلية الذكية</h1>
+        </div>
+        <div class="">
+          <img src="../assets/image/logo.png" alt="لايوجد صورة" width="120px" srcset="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+  <nav class="bg-blue pt-2  sticky-top  ">
+    <div class="d-flex container align-items-start">
+      <ul class=" nav nav-tabs me-auto  mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link  " href="./">الرئيسية</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="users.html">إدارة المستخدمين </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="phr.html"> إدارة المرضى</a>
+        </li>
+      </ul>
+
+      <a class=" btn btn-primary " href="../login.html">تسجيل الخروج</a>
+    </div>
+
+  </nav>
+
+  <main class="main">
+
+    <!-- PHR Section -->
+    <section id="phr-page" class="tabs section">
+      <div class="container">
+        <div class="row ">
+
+          <div class="col-2 mt-5">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#view">عرض</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#addPHR">إضافة</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-10  mt-4 text-center">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="view">
+                <h3>عرض السجلات الطبية</h3>
+                <table class="table border disabled " >
+                  <thead>
+                    <tr>
+                      <th> رقم السجل الصحي</th>
+                      <th> رقم الهوية</th>
+                      <th > اسم المريض</th>
+                      <th> الجنس</th>
+                      <th> التشخيص</th>
+                      <th> عرض</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>001211</td>
+                      <td>10015452</td>
+                      <td>أحمد توفيق علي</td>
+                      <td>ذكر</td>
+                      <td>التشخيص الأولي</td>
+                      <td>
+                        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                          data-bs-target="#viewPHr">
+                          عرض
+                        </button>
+
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="tab-pane " id="addPHR">
+
+                <form action="forms/contact.php" method="post" class=" ">
+                  <legend>إضافة بيانات المرضي </legend>
+                  <div class="row gy-2 pb-50 border">
+
+
+                    <div class="col-md-4">
+                      <label for="id_phr" class="form-label"> رقم السجل الطبي</label>
+                    </div>
+                    <div class="col-md-8">
+                      <input type="text" name="id_phr" disabled id="id_phr" class="form-control"
+                        placeholder="رقم السجل الطبي" required="" value="2">
+                    </div>
+
+
+
+                    <div class="col-md-4">
+                      <label for="idnational" class="form-label"> رقم الهوية </label>
+                    </div>
+
+                    <div class="col-md-8 ">
+                      <input type="text" class="form-control" name="idnational" id="idnational"
+                        placeholder=" رقم الهوية" required="">
+                    </div>
+                    <div class="col-md-4">
+                      <label for="name_pat" class="form-label"> اسم المريض </label>
+                    </div>
+                    <div class="col-md-8 ">
+                      <input type="text" class="form-control" name="name_pat" id="name_pat"
+                        placeholder="الاسم الرباعي للمريض" required="">
+                    </div>
+                    <div class="col-md-4">
+                      <label for="day_pirth" class="form-label"> تاريخ الميلاد </label>
+                    </div>
+                    <div class="col-md-8 ">
+                      <input type="date" class="form-control" name="day_pirth" id="day_pirth"
+                        placeholder="تاريخ الميلاد" required="">
+                    </div>
+                    <div class="col-md-4">
+                      <label for="sex" class="form-label"> الجنس </label>
+                    </div>
+                    <div class="col-md-8 ">
+                      <select class="form-select" name="sex" id="sex">
+                        <option value="ذكر">ذكر</option>
+                        <option value="أنثى">انثى</option>
+                      </select>
+
+                    </div>
+                    <div class="col-md-4">
+                      <label for="pat_mobile" class="form-label"> رقم الجوال </label>
+                    </div>
+                    <div class="col-md-8 ">
+                      <input type="text" class="form-control" name="pat_mobile" id="pat_mobile" placeholder="رقم الجوال"
+                        required="">
+                    </div>
+
+                    <div class="col-md-4">
+                      <label for="diagnosis" class="form-label"> التشخيص الطبي </label>
+                    </div>
+                    <div class="col-md-8 ">
+
+                      <textarea placeholder="التشخيص الطبي" class="form-control" name="diagnosis" id="diagnosis"
+                        rows="2"></textarea>
+                    </div>
+
+                    <div class="col-md-4">
+                      <label for="name_doctor" class="form-label"> أسم الطبيب المعالج </label>
+                    </div>
+                    <div class="col-md-8 ">
+                      <input type="text" class="form-control" name="name_doctor	" id="name_doctor	"
+                        placeholder="الدكتور " required="">
+                    </div>
+
+                    <div class="col-md-4">
+                      <label for="date_Return" class="form-label"> تاريخ العودة </label>
+                    </div>
+                    <div class="col-md-8 ">
+                      <input type="date" class="form-control" name="date_Return" id="date_Return"
+                        placeholder="تاريخ العودة" required="">
+                    </div>
+
+
+                    <div class="col-md-4">
+                      <label for="comments" class="form-label"> ملاحظات </label>
+                    </div>
+                    <div class="col-md-8 mb-2">
+
+                      <textarea placeholder="ملاحظات" class="form-control" name="comments" id="comments"
+                        rows="2"></textarea>
+                    </div>
+
+                  </div>
+
+                  <div class="col-md-12 mt-2">
+
+
+                    <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdropLive">
+                      إضافة
+                    </button>
+                  </div>
+                </form>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /PHR Section -->
+
+  </main>
+
+
+
+
+
+
+
+
+
+  <script src="../assets/plugins/jquery-3.6.4.js"></script>
+  <script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/plugins/dataTable/datatables.min.js"></script>
+  <script> // dataTable
+    document
+      .querySelectorAll(".table")
+      .forEach(function (table) {
+        new DataTable(table, {
+          language: {
+            url: '../assets/plugins/dataTable//ar.json',
+          },
+          responsive: true,
+          processing: true,
+        }
+        )
+      }
+      );
+  </script>
+
+</body>
+
+</html>
